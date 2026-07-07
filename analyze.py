@@ -22,9 +22,9 @@ def analyze_dataset(df):
     print("           BOOK DATASET STATISTICAL SUMMARY")
     print("="*50)
     print(f"Total Books Scraped:      {total_books}")
-    print(f"Average Book Price:       £{avg_price:.2f}")
-    print(f"Median Book Price:        £{median_price:.2f}")
-    print(f"Price Range:              £{min_price:.2f} - £{max_price:.2f}")
+    print(f"Average Book Price:       Rs. {avg_price:.2f}")
+    print(f"Median Book Price:        Rs. {median_price:.2f}")
+    print(f"Price Range:              Rs. {min_price:.2f} - Rs. {max_price:.2f}")
     print("-"*50)
     
     # Rating Distribution
@@ -47,12 +47,12 @@ def analyze_dataset(df):
     print("\nTop 5 Most Expensive Categories (Average Price):")
     expensive_cats = df.groupby('category')['price'].mean().sort_values(ascending=False).head(5)
     for cat, avg_p in expensive_cats.items():
-        print(f"  - {cat:<20}: £{avg_p:.2f}")
+        print(f"  - {cat:<20}: Rs. {avg_p:.2f}")
         
     print("\nTop 5 Cheapest Categories (Average Price):")
     cheapest_cats = df.groupby('category')['price'].mean().sort_values().head(5)
     for cat, avg_p in cheapest_cats.items():
-        print(f"  - {cat:<20}: £{avg_p:.2f}")
+        print(f"  - {cat:<20}: Rs. {avg_p:.2f}")
     print("="*50)
 
 def generate_visualizations(df, output_dir="visualizations"):
@@ -68,7 +68,7 @@ def generate_visualizations(df, output_dir="visualizations"):
     plt.figure(figsize=(10, 6))
     sns.histplot(df['price'], kde=True, color=primary_color, bins=30, line_kws={"linewidth": 2.5})
     plt.title("Distribution of Book Prices", pad=20, fontsize=16, fontweight='bold')
-    plt.xlabel("Price (£)", labelpad=10)
+    plt.xlabel("Price (Rs.)", labelpad=10)
     plt.ylabel("Number of Books", labelpad=10)
     plt.tight_layout()
     price_dist_path = os.path.join(output_dir, "price_distribution.png")
@@ -117,10 +117,10 @@ def generate_visualizations(df, output_dir="visualizations"):
     sns.barplot(x=avg_prices.values, y=avg_prices.index, hue=avg_prices.index, palette="mako", legend=False)
     # Add average price labels on the bars
     for i, val in enumerate(avg_prices.values):
-        plt.text(val + 0.5, i, f"£{val:.2f}", va='center', fontsize=11, fontweight='semibold')
+        plt.text(val + 0.5, i, f"Rs. {val:.2f}", va='center', fontsize=11, fontweight='semibold')
         
     plt.title("Top 15 Most Expensive Categories (Average Price)", pad=20, fontsize=16, fontweight='bold')
-    plt.xlabel("Average Price (£)", labelpad=10)
+    plt.xlabel("Average Price (Rs.)", labelpad=10)
     plt.ylabel("Category", labelpad=10)
     plt.xlim(0, max(avg_prices.values) * 1.12)
     plt.tight_layout()

@@ -80,9 +80,9 @@ Running `python analyze.py` outputs the following statistics on the console:
            BOOK DATASET STATISTICAL SUMMARY
 ==================================================
 Total Books Scraped:      1000
-Average Book Price:       £35.07
-Median Book Price:        £35.98
-Price Range:              £10.00 - £59.99
+Average Book Price:       Rs. 13502.08
+Median Book Price:        Rs. 13852.30
+Price Range:              Rs. 3850.00 - Rs. 23096.15
 --------------------------------------------------
 Rating Distribution:
   5 Star (*****): 196 books (19.6%)
@@ -106,18 +106,18 @@ Top 10 Largest Categories:
   - Food and Drink      : 30 books
 
 Top 5 Most Expensive Categories (Average Price):
-  - Suspense            : £58.33
-  - Novels              : £54.81
-  - Politics            : £53.61
-  - Health              : £51.45
-  - New Adult           : £46.38
+  - Suspense            : Rs. 22457.05
+  - Novels              : Rs. 21101.85
+  - Politics            : Rs. 20641.13
+  - Health              : Rs. 19809.21
+  - New Adult           : Rs. 17857.58
 
 Top 5 Cheapest Categories (Average Price):
-  - Crime               : £10.97
-  - Academic            : £13.12
-  - Adult Fiction       : £15.36
-  - Paranormal          : £15.40
-  - Erotica             : £19.19
+  - Crime               : Rs. 4223.45
+  - Academic            : Rs. 5051.20
+  - Adult Fiction       : Rs. 5913.60
+  - Paranormal          : Rs. 5929.00
+  - Erotica             : Rs. 7388.15
 ==================================================
 ```
 
@@ -126,7 +126,7 @@ Top 5 Cheapest Categories (Average Price):
 ## 📈 Data Visualizations
 The analysis script saves premium charts inside the `visualizations/` folder:
 
-1. **Price Distribution (`price_distribution.png`)**: A kernel density estimate (KDE) overlaid on a price histogram, showing that prices are uniformly distributed between £10 and £60.
+1. **Price Distribution (`price_distribution.png`)**: A kernel density estimate (KDE) overlaid on a price histogram, showing that prices are distributed between Rs. 3,850 and Rs. 23,096.
 2. **Ratings Distribution (`ratings_distribution.png`)**: A clean bar chart plotting rating counts, displaying a relatively uniform distribution with 1-star ratings being slightly more frequent.
 3. **Categories by Count (`categories_by_count.png`)**: A horizontal bar chart mapping the top 15 categories by number of books, showing that *Default*, *Nonfiction*, and *Sequential Art* are the largest categories.
 4. **Categories by Price (`categories_by_price.png`)**: A ranked horizontal bar chart mapping average book price per category, highlighting that *Suspense* is the most expensive category.

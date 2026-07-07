@@ -91,10 +91,9 @@ class BookScraper:
             # 3. Price
             price_tag = pod.find("p", class_="price_color")
             price_str = price_tag.text.strip() if price_tag else "£0.00"
-            # Keep raw for cleaning in analysis, or parse it now
-            # Let's keep a cleaned float and the raw string
             try:
-                price = float(price_str.replace("£", "").replace("Â", "").strip())
+                price_gbp = float(price_str.replace("£", "").replace("Â", "").strip())
+                price = round(price_gbp * 385.0, 2)  # Convert to Rs. (1 GBP = 385 LKR)
             except ValueError:
                 price = 0.0
 
