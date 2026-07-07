@@ -161,19 +161,3 @@ python analyze.py
 ```
 This will output the summary to your terminal and create the charts inside the `visualizations/` directory.
 
----
-
-## 📝 LinkedIn Video Explanation Draft
-Below is a helpful template to help you script your video explanation and complete your **LinkedIn Submission Guideline #4**:
-
-> "Hey everyone! 👋 I am excited to share that I have completed **Task 1 (Web Scraping & Data Analysis)** for my Data Analytics internship at @CodeAlpha! 🚀
-> 
-> 🔍 **What I did:**
-> 1. Developed a Python crawler using `requests` and `BeautifulSoup` to scrape book data across 50 categories from the sandbox website Books to Scrape.
-> 2. Applied data cleaning techniques using `Pandas` to structure prices, map ratings from words to integers, and save the dataset.
-> 3. Conducted exploratory data analysis to find out top categories, average prices, and rating spreads.
-> 4. Designed beautiful data charts using `Seaborn` and `Matplotlib` showing price ranges and category distributions.
->
-> Check out my source code here: [GitHub Repo Link] 💻
-> 
-> Thanks to @CodeAlpha for this awesome learning experience! #DataAnalytics #Python #WebScraping #Pandas #DataVisualization #CodeAlpha"
